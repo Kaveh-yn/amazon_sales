@@ -26,6 +26,7 @@ class PreProcess:
 
     def export_result(self):
         with ExcelWriter('export_result.xlsx', engine='xlsxwriter') as writer:
+            self.df_data.to_excel(writer, sheet_name='Data', index=False)
             self.df_table_1.to_excel(writer, sheet_name='Sales_summary', index=False)
             self.df_table_2.to_excel(writer, sheet_name='Discount_overview', index=False)
 
